@@ -1,8 +1,12 @@
 const express = require('express')
 
 const app = express();
-app.use(() => console.log('hola a todos'))
 
 app.use(express.json());
+
+/** Route definitions */
+app.use('/book', bookRouter);
+app.use('/reservation', reservationRouter);
+app.use('/users', usersRouter);
 
 module.exports = app;
