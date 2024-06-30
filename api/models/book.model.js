@@ -4,8 +4,11 @@ const mongoose = require('mongoose');
 const bookSchema = new mongoose.Schema({
     title: String,
     author: String,
-    available: Boolean
-});
+    available: {
+        type: Boolean,
+        default: true
+    }
+}, { collection: 'books' });
 
 const Book = mongoose.model('Book', bookSchema);
 
