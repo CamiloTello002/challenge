@@ -5,12 +5,12 @@ const bookController = require('./../controllers/book.controller');
 const router = express.Router();
 
 router.route('/')
-    .get(bookController.createUser)
-    .post();
+    .get(bookController.getBooks)
+    .post(bookController.createBook);
 
 router.route('/:id')
-    .get()
-    .put()
-    .delete();
+    .get(bookController.getBook)
+    .put(bookController.updateBook)
+    .delete(bookController.deleteBook);
 
 module.exports = router;
